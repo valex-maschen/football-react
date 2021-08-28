@@ -1,0 +1,29 @@
+.Nav {
+    display: flex;
+    width: 100%;
+    height: 4em;
+    margin-top: 5%;
+    background-color: rgb(78, 93, 160) ;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5)  
+}
+
+.NavItems {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: auto;
+}
+
+.NavItem {
+    font-family:'Open Sans', sans-serif;
+    font-size: 22px;
+}
+
+.NavLink {
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+}
+
+.NavItemPadding {
+    padding-left: 4em;
+}
