@@ -35,11 +35,12 @@ const TeamCalendar = ( {rows, coloums} ) => {
           </TableHead>
           <TableBody>
             {rows.map((row) => (
-              <TableRow key={row.name}>
-                {/* <TableCell align="left">{row.competitionName}</TableCell>
-                <TableCell align="left">{row.areaName}</TableCell>
-                <TableCell align="left">{row.startDate}</TableCell>
-                <TableCell align="left">{row.endDate}</TableCell> */}
+              <TableRow key={row.id}>
+                <TableCell align="left">{row.homeTeam}</TableCell>
+                <TableCell align="left">{row.awayTeam}</TableCell>
+                <TableCell align="left">{row.score.homeTeam}:{row.score.awayTeam}</TableCell>
+                <TableCell align="left">{row.winner}</TableCell>
+                <TableCell align="left">{row.status}</TableCell>
               </TableRow>
             ))}
           </TableBody>
