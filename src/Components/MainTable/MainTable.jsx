@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { NavLink } from 'react-router-dom';
 import Utils from '../../utils/Utils';
-import { Routes } from '../Navbar/Navbar';
+import { Routes } from '../../constants/Routes';
 
 const useStyles = makeStyles({
     container: {

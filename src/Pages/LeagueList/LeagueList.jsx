@@ -1,10 +1,9 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import styles from './Main.module.css';
 import axios from 'axios';
 import MainTable from '../../Components/MainTable/MainTable.jsx';
 
 
-const Main = () => {
+const LeagueList = () => {
     const [state, setState] = useState([]);  
 
     useEffect(() => {
@@ -28,11 +27,11 @@ const Main = () => {
   }),[state])
 
     return (
-        <div className={styles.Container}>
-            <h1> Главная </h1>
+        <div>
+            <h1> Список лиг </h1>
             <MainTable coloums={["Турнир", "Страна", "Начало сезона", "Конец сезона"]} rows={rows}/>
         </div>
     )
 }
 
-export default Main;
+export default LeagueList;
