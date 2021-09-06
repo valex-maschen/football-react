@@ -17,12 +17,17 @@ const Navbar = () => (
             </li>
             <li className={cn(styles.NavItem, styles.NavItemPadding)}>
                 <NavLink className={styles.NavLink} to={Routes.MATCH} exact>
-                    Матчи
+                    Матчи команды
                 </NavLink>
             </li>
             <li className={cn(styles.NavItem, styles.NavItemPadding)}>
                 <NavLink className={styles.NavLink} to={Routes.TEAM} exact>
                     Команды
+                </NavLink>
+            </li>
+            <li className={cn(styles.NavItem, styles.NavItemPadding)}>
+                <NavLink className={styles.NavLink} to={Routes.COMP} exact>
+                    Матчи лиги
                 </NavLink>
             </li>
         </ul>

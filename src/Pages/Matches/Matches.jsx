@@ -5,7 +5,8 @@ import { useParams } from 'react-router-dom';
 
 
 const Matches = () => {
-    const [state, setState] = useState([]);  
+    const [state, setState] = useState([]); 
+    const [error, setError] = useState(''); 
     const param = useParams();
         
     useEffect(() => {
@@ -14,25 +15,26 @@ const Matches = () => {
         .then((res) => {
           const data = res.data;
           setState(data.matches);
-        });
+        }).catch(err =>{
+          setError(err.response.data.message)
+      })
       }, [param]);
-
-      console.log(state)
 
         const rows = useMemo(() =>  
         state.map((match) => {
         return{
         id:match.id,
-        homeTeam:match.homeTeam.name,
-        awayTeam:match.awayTeam.name,
-        score:match.score.fullTime,
-        winner:match.score.winner,
-        status:match.status,
+        homeTeam:match?.homeTeam.name,
+        awayTeam:match?.awayTeam.name,
+        score:match?.score.fullTime,
+        winner:match?.score.winner,
+        status:match?.status,
         }
      }),[state])
-
-     console.log(rows)
-
+    
+     if (error) {
+      return <div>Ошибка: {error}</div>;
+    } 
     return (
         <div>
             <h1> Матчи </h1>

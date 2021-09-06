@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 
 const Teams = () => {
     const [state, setState] = useState([]);
+    const [error, setError] = useState('');
     const param = useParams();
 
     useEffect(()=>{
@@ -13,7 +14,9 @@ const Teams = () => {
         .then((res) => {
             const data = res.data;
             setState(data.teams)
-        });
+        }).catch(err =>{
+            setError(err.response.data.message)
+        })
     }, [param]);
    
     const rows = useMemo(() =>
@@ -26,10 +29,11 @@ const Teams = () => {
             teamColor:teams?.clubColors,
         }
     }), [state]) 
-   
-    console.log(rows)
 
-    return(
+    if (error) {
+        return <div>Ошибка: {error}</div>;
+      } 
+      return(
         <div>
             <h1> Команды </h1>
             <TeamsTable coloums={["Флаг", "Сборная", "Дата основания", "Цвета команды"]} rows={rows}/>

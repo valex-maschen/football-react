@@ -5,6 +5,7 @@ import LeagueList from './Pages/LeagueList/LeagueList';
 import Matches from './Pages/Matches/Matches';
 import Teams from './Pages/Teams/Teams';
 import { Routes } from "./constants/Routes";
+import LeagueCompList from './Pages/LeagueCompList/LeagueCompList';
 function App() {
   return (
 
@@ -14,6 +15,7 @@ function App() {
         <Route path={Routes.LEAGUES} exact component={LeagueList} />
         <Route path={Routes.MATCH} component={Matches}/>
         <Route path={Routes.TEAM} component={Teams}/>
+        <Route path={Routes.COMP} component={LeagueCompList}/>
       </Switch>
     </BrowserRouter>
 
