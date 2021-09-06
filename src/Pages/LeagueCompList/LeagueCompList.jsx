@@ -20,7 +20,6 @@ const LeagueCompList = () => {
         })
     }, [param]);
 
-    console.log(state);
    
     const rows = useMemo(() =>
     state.map((match) => {

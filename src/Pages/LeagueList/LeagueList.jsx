@@ -1,11 +1,13 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import axios from 'axios';
 import MainTable from '../../Components/MainTable/MainTable.jsx';
+import Input from '@material-ui/core/Input';
 
 
 const LeagueList = () => {
     const [state, setState] = useState([]); 
     const [error, setError] = useState('');
+    const [inputValue, setInputValue] = useState('');
 
     useEffect(() => {
         const url = "/v2/competitions";
@@ -27,15 +29,25 @@ const LeagueList = () => {
         startDate: comp?.currentSeason?.startDate,
         endDate: comp?.currentSeason?.endDate,
       }
-  }),[state])
+  }),[state])   
 
+    const filterRows = rows.filter((row)=> {
+      return row.competitionName.toLowerCase().includes(inputValue.toLowerCase());
+    })
+
+  const handleChange = (e) => {
+      setInputValue(e.target.value)
+  }
+
+  console.log(inputValue)
   if (error) {
     return <div>Ошибка: {error}</div>;
   }
      return (
         <div>
             <h1> Список лиг </h1>
-            <MainTable coloums={["Турнир", "Страна", "Начало сезона", "Конец сезона"]} rows={rows}/>
+            <Input placeholder='Введите название турнира' inputProps={{ 'aria-label': 'description' }} onChange={handleChange} value={ inputValue }/> 
+            <MainTable coloums={["Турнир", "Страна", "Начало сезона", "Конец сезона"]} rows={inputValue?filterRows:rows}/>
         </div>
     )
 }
