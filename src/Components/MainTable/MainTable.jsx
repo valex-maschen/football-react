@@ -11,6 +11,8 @@ import { NavLink } from 'react-router-dom';
 import Utils from '../../utils/Utils';
 import { Routes } from '../../constants/Routes';
 
+
+
 const useStyles = makeStyles({
     container: {
     display: 'flex',
@@ -19,6 +21,10 @@ const useStyles = makeStyles({
     table: {
     width: '60%',
     },
+    compLink: {
+      textDecoration: 'none',
+      marginLeft: '30%',
+    }
   });
 
 const MainTable = ({ rows, coloums }) => {
@@ -38,13 +44,14 @@ const MainTable = ({ rows, coloums }) => {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell align="left">
-              <NavLink to={Utils.generateUri(Routes.TEAM, { id: row.id })} exact>
-              {row.competitionName}
-              </NavLink> 
-                
-                
+            <TableRow key={row.name}> 
+                <TableCell align="left">
+                  <NavLink to={Utils.generateUri(Routes.TEAM, { id: row.id })} exact>
+                     {row.competitionName}
+                  </NavLink> 
+                  <NavLink to={Utils.generateUri(Routes.COMP, { id: row.id })} exact className={classes.compLink}> 
+                      Показать матчи 
+                  </NavLink>        
                 </TableCell>
               <TableCell align="left">{row.areaName}</TableCell>
               <TableCell align="left">{row.startDate}</TableCell>
@@ -56,11 +63,6 @@ const MainTable = ({ rows, coloums }) => {
     </TableContainer>
     );
 }
-
-
-
-
-
 
 
 export default MainTable;

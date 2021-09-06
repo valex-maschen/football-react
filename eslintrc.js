@@ -1,4 +1,4 @@
-const prettierConfig = require('./.prettierrc.js');
+const prettierConfig = require('./prettierrc.js');
 
 module.exports = {
     "extends": ["airbnb", "prettier", "prettier/react", "plugin:sonarjs/recommended", "plugin:compat/recommended", "plugin:promise/recommended"],
