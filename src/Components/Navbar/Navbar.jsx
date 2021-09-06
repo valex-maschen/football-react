@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
-import Search from '../../Components/Search/Search.jsx';
 import { Routes } from '../../constants/Routes';
 
 
@@ -31,7 +30,6 @@ const Navbar = () => (
                 </NavLink>
             </li>
         </ul>
-        <Search/>
     </nav>
 )
     
