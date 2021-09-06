@@ -8,8 +8,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Routes } from '../Navbar/Navbar';
+import { Routes } from '../../constants/Routes';
 import Utils from '../../utils/Utils';
+import LeagueList from '../../Pages/LeagueList/LeagueList';
 
 
 const useStyles = makeStyles({
@@ -20,6 +21,16 @@ const useStyles = makeStyles({
     table: {
     width: '80%',
     },
+    header: {
+      width: '30%'
+    },
+    flagContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    },
+    flag: {
+      width: '20%'
+    }
   });
 
 const TeamsTable = ({ rows, coloums }) => {
@@ -32,7 +43,7 @@ const TeamsTable = ({ rows, coloums }) => {
         <TableHead>
           <TableRow>
               {coloums.map((coloumn) => (
-                <TableCell key={coloumn}>{coloumn}</TableCell>
+                <TableCell key={coloumn} className={classes.header}>{coloumn}</TableCell>
               ))}
             
           </TableRow>
@@ -40,11 +51,10 @@ const TeamsTable = ({ rows, coloums }) => {
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell align="left">
-              <svg>
-              <use xlinkHref={row.teamFlag}>
-              </use>
-              </svg>
+              <TableCell align="left" className={classes.flagContainer}>
+              <img src={row.teamFlag} alt='nope' className={classes.flag}>
+              </img>
+
               </TableCell>
               <TableCell align="left">
    
