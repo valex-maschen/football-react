@@ -115,6 +115,7 @@ module.exports = {
     },
     output: {
         filename: filename('js'),
+        publicPath: '/',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
@@ -162,11 +163,11 @@ module.exports = {
         disableHostCheck: true,
         historyApiFallback: true,
         proxy: {
-            "/v2": {
-                target: "http://api.football-data.org",
+            '/v2': {
+                target: 'http://api.football-data.org',
                 ws: true,
-                logLevel: "debug",
-                secure: false,
+                logLevel: 'debug',
+                secure: false
             }
         }
     },

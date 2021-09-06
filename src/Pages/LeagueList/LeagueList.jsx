@@ -4,7 +4,7 @@ import MainTable from '../../Components/MainTable/MainTable.jsx';
 
 
 const LeagueList = () => {
-    const [state, setState] = useState([]);  
+    const [state, setState   ] = useState([]);  
 
     useEffect(() => {
         const url = "/v2/competitions";
@@ -26,7 +26,7 @@ const LeagueList = () => {
       }
   }),[state])
 
-    return (
+     return (
         <div>
             <h1> Список лиг </h1>
             <MainTable coloums={["Турнир", "Страна", "Начало сезона", "Конец сезона"]} rows={rows}/>
