@@ -1,3 +1,46 @@
+## Available Teams
+
+1. | WC | FIFA World Cup
+2.  | CL | UEFA Champions League
+3. | BL1 | Bundesliga
+4. | DED | Eredivisie
+5. | BSA | Campeonato Brasileiro Série A
+6. | PD | Primera Division
+7. | FL1 | Ligue 1
+8. | ELC | Championship
+9. | PPL | Primeira Liga
+10. | EC | European Championship
+11. | SA | Serie A
+12. | PL | Premier League
+13. | CLI | Copa Libertadores
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
